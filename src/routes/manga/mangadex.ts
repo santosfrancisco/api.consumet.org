@@ -28,7 +28,7 @@ const routes = async (fastify: FastifyInstance, options: RegisterOptions) => {
 
     try {
       const res = await mangadex
-        .fetchMangaInfo(id)
+        .fetchMangaInfo(id, ['pt-br'])
         .catch((err) => reply.status(404).send({ message: err }));
 
       reply.status(200).send(res);
